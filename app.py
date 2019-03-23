@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask, jsonify, render_template, redirect
+import os
+import json
+
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return "<h1>Index!</h1>"
+    return render_template("base.html")
 
 
 @app.route("/hello")
@@ -17,4 +20,4 @@ def members():
     return "Members"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
