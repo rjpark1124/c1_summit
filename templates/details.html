@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block header %}
+<header>
+<div class="header-content">
+    <div class="header-content-inner">
+        <h2 id="homeHeading">{{img_obj['metadata']['title']}}</h2>
+        <hr>
+
+        <figure>
+            <a href="{{img_obj['image']}}"><img src="{{img_obj['image']}}" alt="the image" style="height:280px"></a>
+            <figcaption>
+                Date Created: {{img_obj['metadata']['date_created']}}<br>
+                Description: {{img_obj['metadata']['description']}}<br>
+                Center: {{img_obj['metadata']['center']}}<br>
+                NASA ID: {{img_obj['metadata']['nasa_id']}}<br>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+</header>
+{% endblock %}
+

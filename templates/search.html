@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+
+{% block header %}
+<header>
+<div class="header-content">
+    <div class="header-content-inner">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Search NASA Images</h2>
+                <hr class="light">
+                <form action ="{{url_for('get_refined_results')}}" method = "POST" color="black">
+                    <input type="text" name="query">
+
+                    <strong>Start Year (YYYY)</strong> <input type="number" name="s_year" style="width: 10%; color:black;" min="1950" max="2100">
+                    <strong>End Year (YYYY)</strong><input type="number" name="e_year" style="width:10%; color:black;" min="1950" max="2100">
+                    <strong>Location</strong><input type="text" name="location" style="width:25%; padding:3px 6px;">
+                    <br>
+                    <strong>NASA Center</strong><input type="text" name="center" style="width:10%; padding:3px 6px;">
+
+                    <br>
+                    <input class="btn btn-default btn-l sr-button" type="submit" value="Search">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    </header>
+{% endblock %}

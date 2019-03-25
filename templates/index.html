@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+
+{% block header %}
+<header>
+<div class="header-content">
+    <div class="header-content-inner">
+        <h1 id="homeHeading">NASA Image Search</h1>
+        <hr>
+        <p> Web Application to search NASA's image archive</p>
+        <p> Capital One May 2019 Software Engineering Summit</p>
+        <a href="#about" class="btn btn-primary btn-xl page-scroll">Make a Quick Search!</a>
+    </div>
+</div>
+</header>
+{% endblock %}
+
+
+{% block extras_content %}
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Quick Search</h2>
+                <hr class="light">
+                <form action ="{{url_for('get_results')}}" method = "POST">
+                    <input type="text" name="query">
+
+                    <input class="btn btn-default btn-l sr-button" type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
